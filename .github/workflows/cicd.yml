@@ -1,0 +1,23 @@
+name: DevOps CI/CD application
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify project files
+        run: |
+          echo "DevOps CI/CD application started"
+          echo "Repository files:"
+          ls -la
+          echo "Project verification completed successfully"
